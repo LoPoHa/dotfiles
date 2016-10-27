@@ -1,0 +1,30 @@
+[options]
+font = Inconsolata 16
+
+[colors]
+#foreground = #dcdccc
+background = rgba(20, 20, 20, 0.70)
+#
+#color0 = #240302
+#color8 = #AE0B0B
+#
+#color1 = #500000
+#color9 = #D00000
+#
+#color2 = #8E0000
+#color10 = #7A6262
+##
+#color3 = #4F0000
+#color11 = #FF0000
+#
+#color4 = #980000
+#color12 = #553C3C
+#
+##color5 = #B10000
+#color13 = #9C0A0A
+#
+#color6 = #550000
+#color14 = #B80000
+#
+#color7 = #BB0000
+##color15 = #FF0000
