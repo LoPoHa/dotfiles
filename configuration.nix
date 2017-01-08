@@ -39,6 +39,9 @@
 
 			# fonts
 			./nix_configs/fonts.nix
+			
+			# 3d printer
+			./nix_configs/3dprinter.nix
 		];
 
 	nixpkgs.config.allowUnfree = true;
@@ -53,10 +56,10 @@
 	networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 	networking.firewall.enable = true;
 
+	
 	# Select internationalisation properties.
 	i18n = {
 		consoleFont = "Lat2-Terminus16";
-		consoleKeyMap = "us";
 		defaultLocale = "en_US.UTF-8";
 	};
 
@@ -70,13 +73,40 @@
 		keepassx2
 		p7zip
 		htop
-		gnupg
 		google-drive-ocamlfuse
 		krita
 		chromium
 		blender
 		hakuneko
+		pciutils
+		gimp
+		inkscape
+		mesa
 	];
+	
+	hardware = {
+		bumblebee = {
+			connectDisplay = true;
+			enable = true;
+		};
+		cpu.intel.updateMicrocode = true;
+		opengl = {
+			driSupport32Bit = true;
+			extraPackages = with pkgs; [ vaapiIntel ];
+		};
+		pulseaudio = {
+			enable = true;
+			# systemWide = false;
+			support32Bit = true;
+		};
+	};
+
+	# touchpad
+	services.xserver.synaptics = {
+		enable = true;
+		twoFingerScroll = true;
+	};
+
 
 	# List services that you want to enable:
 
@@ -86,11 +116,8 @@
 	# Enable CUPS to print documents.
 	# services.printing.enable = true;
 
-	#pulseaudio
-	hardware.pulseaudio.enable = true;
-
   	# notebook specific
 	powerManagement.enable = true;
 	services.dbus.enable = true;
 	services.upower.enable = true;
-}
+}                        

@@ -12,14 +12,12 @@
 	];
 
 	# Enable the X11 windowing system.
-	services.xserver.enable = true;
-	services.xserver.layout = "us";
-	services.xserver.xkbOptions = "eurosign:e";
+	services.xserver = {
+        enable = true;
+        layout = "us";
+        xkbOptions = "eurosign:e,caps:escape";
 
-	# Enable the KDE Desktop Environment.
-	# services.xserver.displayManager.kdm.enable = true;
-	# services.xserver.desktopManager.kde4.enable = true;
-
-	# i3
-	services.xserver.windowManager.i3.enable = true;
+        # i3
+        windowManager.i3.enable = true;
+    };  
 }

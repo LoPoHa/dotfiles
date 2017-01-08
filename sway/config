@@ -1,6 +1,6 @@
 # required to set background image in x/i3
 # remove after the switch to wayland/sway
-exec feh --bg-scale /etc/nixos/images/akame_red_black.png
+exec feh --bg-scale /etc/nixos/images/fate_stay_night_saber.jpg
 
 # enable in sway/wayland
 #output "*" background /home/christian/dotfiles/images/akame_red_black.png fill
@@ -100,8 +100,8 @@ set $workspace2 "2: 2"
 set $workspace3 "3: 3"
 set $workspace4 "4: "
 set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: 7"
+set $workspace6 "6: 6"
+set $workspace7 "7: "
 set $workspace8 "8: 8"
 set $workspace9 "9: 9"
 set $workspace10 "10: 10"
@@ -136,7 +136,8 @@ assign [class="chromium-browser"] $workspace1
 assign [class="Krita"] $workspace4
 assign [class="Inkscape"] $workspace4
 assign [class="Zathura"] $workspace5
-assign [class="Keepassx"] $workspace6
+assign [class="mpv"] $workspace6
+assign [class="Keepassx"] $workspace7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
