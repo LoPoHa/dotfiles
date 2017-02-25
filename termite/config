@@ -1,0 +1,39 @@
+[options]
+font = Source Code Pro 14
+
+[colors]
+foreground = #dcdccc
+background = rgba(30, 30, 30, 0.9)
+
+# black
+color0  = #222222
+color8  = #666666
+
+# red
+color1  = #ff0000
+color9  = #920000
+
+# green
+color2  = #bd0118
+color10 = #7e0011
+
+# yellow
+color3  = #282860
+color11 = #151560
+
+# blue
+color4  = #505ca7
+color12 = #2d3da7
+
+# magenta
+color5  = #e16a6a
+color13 = #e13c3c
+
+# cyan
+color6  = #6d878d
+color14 = #42717b
+
+# white
+color7  = #3b2929
+color15 = #9d9d9d
+

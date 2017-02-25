@@ -9,12 +9,13 @@
 			powerline-fonts
 			font-awesome-ttf
 			inconsolata
+			source-code-pro
 		];
 		fontconfig = {
 			defaultFonts = {
-				monospace = [ "inconsolata" ];
-				sansSerif = [ "inconsolata" ];
-				serif     = [ "inconsolata" ];
+				monospace = [ "Source Code Pro" ];
+				sansSerif = [ "Source Code Pro" ];
+				serif     = [ "Source Code Pro" ];
 			};
 		};
 	};
