@@ -20,8 +20,8 @@ exec feh --bg-scale /etc/nixos/images/fate_stay_night_saber.jpg
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod1
+
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -132,9 +132,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 
-assign [class="chromium-browser"] $workspace1
-assign [class="Krita"] $workspace4
-assign [class="Inkscape"] $workspace4
+assign [class="firefox"] $workspace1
 assign [class="Zathura"] $workspace5
 assign [class="mpv"] $workspace6
 assign [class="Keepassx"] $workspace7
@@ -206,11 +204,9 @@ bar {
 #bindsym $mod+shift+x exec swaylock -i /home/christian/dotfiles/images/akame_red_black.png
 bindsym $mod+shift+x exec i3lock -i /home/christian/dotfiles/images/akame_red_black.png
 
-bindsym $mod+shift+f exec chromium-browser --incognito
+bindsym $mod+shift+f exec firefox
 bindsym $mod+shift+z exec zathura
 bindsym $mod+shift+p exec keepassx
-bindsym $mod+shift+d exec krita
-bindsym $mod+shift+i exec inkscape
 
 # remove wayland
 exec compton

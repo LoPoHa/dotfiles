@@ -47,7 +47,15 @@
 	nixpkgs.config.allowUnfree = true;
 
 	# Generate a copy of the config file
+    boot.initrd.luks.devices = [
+    {
+        name="root";
+        device="/dev/sda2";
+        preLVM = true;
+    }
+	];
 	system.copySystemConfiguration = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
 	# Use the gummiboot efi boot loader.
 	boot.loader.systemd-boot.enable = true;
@@ -59,30 +67,32 @@
 	
 	# Select internationalisation properties.
 	i18n = {
-		consoleFont = "Lat2-Terminus16";
+		consoleFont = "inconsolata";
 		defaultLocale = "en_US.UTF-8";
 	};
 
 	# Set your time zone.
 	time.timeZone = "Europe/Berlin";
+	
+    nixpkgs.config.firefox = {
+        enableGoogleTalkPlugin = true;
+    };
 
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
+	    zip
+	    unzip
 		termite
 		keepassx2
-		p7zip
 		htop
 		google-drive-ocamlfuse
-		krita
-		chromium
-		blender
+		firefox 
 		hakuneko
-		pciutils
-		gimp
-		inkscape
+		blender
 		mesa
 	];
+
 	
 	hardware = {
 		bumblebee = {

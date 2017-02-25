@@ -10,5 +10,12 @@
 			font-awesome-ttf
 			inconsolata
 		];
+		fontconfig = {
+			defaultFonts = {
+				monospace = [ "inconsolata" ];
+				sansSerif = [ "inconsolata" ];
+				serif     = [ "inconsolata" ];
+			};
+		};
 	};
 }
