@@ -1,9 +1,12 @@
 { config, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
-		# i3
-		i3lock
-		i3status
+		# bspwm
+		xtitle
+		sutils
+		xdo
+		lemonbar
+		sxhkd
 		rofi
 
 		# X11 required:
@@ -17,7 +20,7 @@
         layout = "us";
         xkbOptions = "eurosign:e,caps:escape";
 
-        # i3
-        windowManager.i3.enable = true;
+        # bspwm
+        windowManager.bspwm.enable = true;
     };  
 }

@@ -47,20 +47,13 @@
 	nixpkgs.config.allowUnfree = true;
 
 	# Generate a copy of the config file
-    boot.initrd.luks.devices = [
-    {
-        name="root";
-        device="/dev/sda2";
-        preLVM = true;
-    }
-	];
 	system.copySystemConfiguration = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    	boot.loader.efi.canTouchEfiVariables = true;
 
 	# Use the gummiboot efi boot loader.
 	boot.loader.systemd-boot.enable = true;
 
-	networking.hostName = "direx"; # Define your hostname.
+	networking.hostName = "Noragami"; # Define your hostname.
 	networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 	networking.firewall.enable = true;
 
@@ -74,10 +67,6 @@
 	# Set your time zone.
 	time.timeZone = "Europe/Berlin";
 	
-    nixpkgs.config.firefox = {
-        enableGoogleTalkPlugin = true;
-    };
-
 	# List packages installed in system profile. To search by name, run:
 	# $ nix-env -qaP | grep wget
 	environment.systemPackages = with pkgs; [
@@ -87,7 +76,7 @@
 		keepassx2
 		htop
 		google-drive-ocamlfuse
-		firefox 
+		qutebrowser
 		hakuneko
 		blender
 		mesa
@@ -95,15 +84,15 @@
 
 	
 	hardware = {
-		bumblebee = {
-			connectDisplay = true;
-			enable = true;
-		};
+		#bumblebee = {
+			#connectDisplay = true;
+			#enable = true;
+		#};
 		cpu.intel.updateMicrocode = true;
 		opengl = {
-			driSupport32Bit = true;
-			extraPackages = with pkgs; [ vaapiIntel ];
-		};
+		    driSupport32Bit = true;
+		    extraPackages = with pkgs; [ vaapiIntel ];
+	    };
 		pulseaudio = {
 			enable = true;
 			# systemWide = false;
@@ -128,6 +117,7 @@
 
   	# notebook specific
 	powerManagement.enable = true;
+
 	services.dbus.enable = true;
 	services.upower.enable = true;
 }                        

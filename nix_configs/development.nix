@@ -3,7 +3,7 @@
 	environment.systemPackages = with pkgs; [
 		# other
 		git
-		rustc
-		cargo
+		#rustc
+		#cargo
 	];
 }

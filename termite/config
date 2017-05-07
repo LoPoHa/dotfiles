@@ -1,9 +1,10 @@
 [options]
 font = Source Code Pro 14
+cursor_shape = underline
 
 [colors]
 foreground = #dcdccc
-background = rgba(30, 30, 30, 0.9)
+background = rgba(30, 30, 30, 0.8)
 
 # black
 color0  = #222222

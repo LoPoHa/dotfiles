@@ -2,20 +2,18 @@
 {
 	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.extraUsers.christian = {
-		name = "christian";
-		description = "Christian Dereck";
+		name = "lopoha";
+		description = "LoPoHa";
 		group = "users";
 		extraGroups = [
 			"wheel"
 			"disk"
 			"audio"
 			"video"
-			"systemd-journal"
-			"vboxuser"
 		];
 		isNormalUser = true;
 		createHome = true;
-		home = "/home/christian";
+		home = "/home/lopoha";
 		shell = "/run/current-system/sw/bin/zsh";
 		uid = 1000;
 	};
