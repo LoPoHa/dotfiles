@@ -10,6 +10,7 @@
 			"disk"
 			"audio"
 			"video"
+			"fuse"
 		];
 		isNormalUser = true;
 		createHome = true;

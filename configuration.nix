@@ -25,6 +25,9 @@
 			# sudo
 			./nix_configs/sudo.nix
 
+			# latex
+			./nix_configs/latex.nix
+
 			# users
 			./nix_configs/users.nix
 
@@ -42,9 +45,13 @@
 			
 			# 3d printer
 			./nix_configs/3dprinter.nix
+			
+			# music
+			./nix_configs/music.nix
 		];
 
 	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.security.setuiPrograms = [ "fusermount" "mount" "umount" ];
 
 	# Generate a copy of the config file
 	system.copySystemConfiguration = true;
@@ -77,9 +84,17 @@
 		htop
 		google-drive-ocamlfuse
 		qutebrowser
+		firefox
+		chromium
 		hakuneko
 		blender
+		gimp
 		mesa
+		qemu
+		imagemagick
+		qbittorrent
+		ripgrep
+		file
 	];
 
 	
