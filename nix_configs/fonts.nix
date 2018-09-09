@@ -10,6 +10,8 @@
 			font-awesome-ttf
 			inconsolata
 			source-code-pro
+			fira-code
+			source-han-sans-japanese
 		];
 		fontconfig = {
 			defaultFonts = {

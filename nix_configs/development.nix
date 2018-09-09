@@ -3,9 +3,11 @@
 	environment.systemPackages = with pkgs; [
 		# other
 		git
-		clang
-		llvm
+		#clang
+		#llvm
 		lld
+
+		idris
 		#rustc
 		#cargo
 	];

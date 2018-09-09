@@ -20,13 +20,13 @@
 			./nix_configs/shell.nix
 
 			# games
-			./nix_configs/games.nix
+			#./nix_configs/games.nix
 
 			# sudo
 			./nix_configs/sudo.nix
 
 			# latex
-			./nix_configs/latex.nix
+			#./nix_configs/latex.nix
 
 			# users
 			./nix_configs/users.nix
@@ -35,7 +35,7 @@
 			./nix_configs/media.nix
 
 			# communication
-			./nix_configs/communication.nix
+			#./nix_configs/communication.nix
 			
 			# development
 			./nix_configs/development.nix
@@ -44,10 +44,13 @@
 			./nix_configs/fonts.nix
 			
 			# 3d printer
-			./nix_configs/3dprinter.nix
+			#./nix_configs/3dprinter.nix
 			
 			# music
 			./nix_configs/music.nix
+			
+			# photography
+			./nix_configs/photography.nix
 		];
 
 	nixpkgs.config.allowUnfree = true;
@@ -79,49 +82,28 @@
 	environment.systemPackages = with pkgs; [
 	    zip
 	    unzip
-		termite
+	    termite
 		keepassx2
 		htop
 		google-drive-ocamlfuse
-		qutebrowser
+		#qutebrowser
 		firefox
-		chromium
-		hakuneko
-		blender
-		gimp
-		mesa
-		qemu
-		imagemagick
-		qbittorrent
+		#chromium
+		#hakuneko
+		#blender
+		#mesa
+		#qemu
+		#imagemagick
+		#qbittorrent
 		ripgrep
 		file
+		alsaUtils
+		kitty
+		ranger
 	];
 
 	
-	hardware = {
-		#bumblebee = {
-			#connectDisplay = true;
-			#enable = true;
-		#};
-		cpu.intel.updateMicrocode = true;
-		opengl = {
-		    driSupport32Bit = true;
-		    extraPackages = with pkgs; [ vaapiIntel ];
-	    };
-		pulseaudio = {
-			enable = true;
-			# systemWide = false;
-			support32Bit = true;
-		};
-	};
-
-	# touchpad
-	services.xserver.synaptics = {
-		enable = true;
-		twoFingerScroll = true;
-	};
-
-
+	
 	# List services that you want to enable:
 
 	# Enable the OpenSSH daemon.
@@ -131,8 +113,29 @@
 	# services.printing.enable = true;
 
   	# notebook specific
-	powerManagement.enable = true;
+	# powerManagement.enable = true;
+
+    hardware = {
+        #opengl = {
+            #driSupport32Bit = true;
+        #};
+        pulseaudio = {
+            enable = true;
+            package = pkgs.pulseaudioFull;
+            #support32Bit = true;
+        };
+    };
+
+    # japanese input
+    i18n.inputMethod = {
+        enabled = "ibus";
+        ibus.engines = with pkgs.ibus-engines; [ anthy ];
+    };
+
 
 	services.dbus.enable = true;
 	services.upower.enable = true;
+
+	system.stateVersion = "unstable";
+	system.autoUpgrade.enable = true;
 }                        

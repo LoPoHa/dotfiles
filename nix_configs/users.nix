@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
 	# Define a user account. Don't forget to set a password with ‘passwd’.
-	users.extraUsers.christian = {
+	users.extraUsers.lopoha = {
 		name = "lopoha";
 		description = "LoPoHa";
 		group = "users";

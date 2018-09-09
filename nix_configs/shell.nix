@@ -25,6 +25,7 @@
 		
 		# export cargo path
 		export PATH="$PATH:$HOME/.cargo/bin"
+		export PATH="$PATH:$HOME/.own_programs"
 
 		#disable caps lock
 		setxkbmap -option ctrl:nocaps
