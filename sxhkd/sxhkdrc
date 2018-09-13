@@ -4,11 +4,8 @@
 
 # terminal emulator
 super + Return
-    kitty ranger
-
-super + shift + Return
-    kitty ranger
-
+    kitty
+#
 # program launcher
 super + @space
 	rofi -show run -lines 5 -eh 2 -width 100 -padding 480 -opacity "85" -bw 0 -bc "#090A0C" -bg "#090A0C" -fg "#B20000" -hlbg "#090A0C" -hlfg "#9575cd" -font "Terminess Powerline 20"
