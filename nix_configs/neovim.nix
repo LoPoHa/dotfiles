@@ -50,6 +50,9 @@
 					let g:idris_indent_where = 6
 					let g:idris_indent_do = 3
 					let g:idris_indent_rewrite = 8
+
+                    set nobackup
+                    set nowritebackup
 				'';
 			};
 		})

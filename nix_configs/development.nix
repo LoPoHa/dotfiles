@@ -8,7 +8,18 @@
 		lld
 
 		idris
+		openjdk
 		#rustc
 		#cargo
+        nim
+
+        cabal2nix
+        nix-prefetch-git
+        cabal-install
+        stack
+        zlib
+        pkgconfig
+
+	    atom
 	];
 }

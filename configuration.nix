@@ -5,137 +5,142 @@
 { config, pkgs, ... }:
 
 {
-	imports =
-		[
-			# Include the results of the hardware scan.
-			./hardware-configuration.nix
+    imports =
+        [
+# Include the results of the hardware scan.
+        ./hardware-configuration.nix
 
-			# neovim
-			./nix_configs/neovim.nix
+# neovim
+            ./nix_configs/neovim.nix
 
-			# window manger
-			./nix_configs/window_manager.nix
+# window manger
+            ./nix_configs/window_manager.nix
 
-			# shell
-			./nix_configs/shell.nix
+# shell
+            ./nix_configs/shell.nix
 
-			# games
-			#./nix_configs/games.nix
+# games
+            ./nix_configs/games.nix
 
-			# sudo
-			./nix_configs/sudo.nix
+# sudo
+            ./nix_configs/sudo.nix
 
-			# latex
-			#./nix_configs/latex.nix
+# latex
+#./nix_configs/latex.nix
 
-			# users
-			./nix_configs/users.nix
+# users
+            ./nix_configs/users.nix
 
-			# media
-			./nix_configs/media.nix
+# media
+            ./nix_configs/media.nix
 
-			# communication
-			#./nix_configs/communication.nix
-			
-			# development
-			./nix_configs/development.nix
+# communication
+#./nix_configs/communication.nix
 
-			# fonts
-			./nix_configs/fonts.nix
-			
-			# 3d printer
-			#./nix_configs/3dprinter.nix
-			
-			# music
-			./nix_configs/music.nix
-			
-			# photography
-			./nix_configs/photography.nix
-		];
+# development
+            ./nix_configs/development.nix
 
-	nixpkgs.config.allowUnfree = true;
-	nixpkgs.config.security.setuiPrograms = [ "fusermount" "mount" "umount" ];
+# fonts
+            ./nix_configs/fonts.nix
 
-	# Generate a copy of the config file
-	system.copySystemConfiguration = true;
-    	boot.loader.efi.canTouchEfiVariables = true;
+# 3d printer
+#./nix_configs/3dprinter.nix
 
-	# Use the gummiboot efi boot loader.
-	boot.loader.systemd-boot.enable = true;
+# music
+            ./nix_configs/music.nix
 
-	networking.hostName = "Noragami"; # Define your hostname.
-	networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-	networking.firewall.enable = true;
+# photography
+            ./nix_configs/photography.nix
+            ];
 
-	
-	# Select internationalisation properties.
-	i18n = {
-		consoleFont = "inconsolata";
-		defaultLocale = "en_US.UTF-8";
-	};
+    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config.security.setuiPrograms = [ "fusermount" "mount" "umount" ];
 
-	# Set your time zone.
-	time.timeZone = "Europe/Berlin";
-	
-	# List packages installed in system profile. To search by name, run:
-	# $ nix-env -qaP | grep wget
-	environment.systemPackages = with pkgs; [
-	    zip
-	    unzip
-	    termite
-		keepassx2
-		htop
-		google-drive-ocamlfuse
-		#qutebrowser
-		firefox
-		#chromium
-		#hakuneko
-		#blender
-		#mesa
-		#qemu
-		#imagemagick
-		#qbittorrent
-		ripgrep
-		file
-		alsaUtils
-		kitty
-		ranger
-	];
+# Generate a copy of the config file
+    system.copySystemConfiguration = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
-	
-	
-	# List services that you want to enable:
+# Use the gummiboot efi boot loader.
+    boot.loader.systemd-boot.enable = true;
 
-	# Enable the OpenSSH daemon.
-	# services.openssh.enable = true;
+    networking.hostName = "Noragami"; # Define your hostname.
+        networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+        networking.firewall.enable = true;
 
-	# Enable CUPS to print documents.
-	# services.printing.enable = true;
 
-  	# notebook specific
-	# powerManagement.enable = true;
+# Select internationalisation properties.
+    i18n = {
+        consoleFont = "inconsolata";
+        defaultLocale = "en_US.UTF-8";
+    };
+
+# Set your time zone.
+    time.timeZone = "Europe/Berlin";
+
+# List packages installed in system profile. To search by name, run:
+# $ nix-env -qaP | grep wget
+    environment.systemPackages = with pkgs; [
+        zip
+            unzip
+            termite
+            keepassx2
+            htop
+            google-drive-ocamlfuse
+#qutebrowser
+            firefox
+#chromium
+#hakuneko
+#blender
+#mesa
+#qemu
+#imagemagick
+#qbittorrent
+            ripgrep
+            file
+            alsaUtils
+            kitty
+            ranger
+            ];
+
+
+
+# List services that you want to enable:
+
+# Enable the OpenSSH daemon.
+# services.openssh.enable = true;
+
+# Enable CUPS to print documents.
+# services.printing.enable = true;
+
+# notebook specific
+# powerManagement.enable = true;
 
     hardware = {
-        #opengl = {
-            #driSupport32Bit = true;
-        #};
+        opengl = {
+            driSupport32Bit = true;
+        };
         pulseaudio = {
             enable = true;
             package = pkgs.pulseaudioFull;
-            #support32Bit = true;
+            support32Bit = true;
+        };
+        # scanner
+        sane = {
+            enable = true;
         };
     };
 
-    # japanese input
+# japanese input
     i18n.inputMethod = {
         enabled = "ibus";
         ibus.engines = with pkgs.ibus-engines; [ anthy ];
     };
 
 
-	services.dbus.enable = true;
-	services.upower.enable = true;
 
-	system.stateVersion = "unstable";
-	system.autoUpgrade.enable = true;
+    services.dbus.enable = true;
+    services.upower.enable = true;
+
+    system.stateVersion = "unstable";
+    system.autoUpgrade.enable = true;
 }                        

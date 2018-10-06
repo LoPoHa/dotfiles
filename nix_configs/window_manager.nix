@@ -2,12 +2,12 @@
 {
 	environment.systemPackages = with pkgs; [
 		# bspwm
-		xtitle
-		sutils
-		xdo
-		lemonbar
-		sxhkd
-		rofi
+		#xtitle
+		#sutils
+		#xdo
+		#lemonbar
+		#sxhkd
+		#rofi
 
 		# X11 required:
 		feh
@@ -20,7 +20,9 @@
         layout = "us";
         xkbOptions = "eurosign:e,caps:escape";
 
-        # bspwm
-        windowManager.bspwm.enable = true;
+        #windowManager.bspwm.enable = true;
+
+        displayManager.sddm.enable = true;
+        desktopManager.plasma5.enable = true;
     };  
 }

@@ -4,8 +4,11 @@
 		imv
 		mpv
 		cmus
-		zathura
+		#zathura
+		okular
 		youtube-dl
 		kdenlive
+		#scanner
+		skanlite
 	];
 }
