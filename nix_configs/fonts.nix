@@ -4,8 +4,8 @@
 		enableFontDir = true;
 		enableGhostscriptFonts = true;
 		fonts = with pkgs; [
+		    hasklig
 			meslo-lg
-			font-droid
 			powerline-fonts
 			font-awesome-ttf
 			inconsolata

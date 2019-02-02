@@ -5,4 +5,8 @@
 	    gimp
 	    displaycal
 	];
+	services.udev = {
+	    extraRules = ''
+	    '';
+	};
 }

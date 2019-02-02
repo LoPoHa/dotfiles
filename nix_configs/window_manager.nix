@@ -8,6 +8,9 @@
 		#lemonbar
 		#sxhkd
 		#rofi
+		kdeconnect
+		kontact
+		colord-kde
 
 		# X11 required:
 		feh
@@ -25,4 +28,5 @@
         displayManager.sddm.enable = true;
         desktopManager.plasma5.enable = true;
     };  
+    services.colord.enable = true;
 }

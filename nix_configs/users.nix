@@ -11,6 +11,8 @@
 			"audio"
 			"video"
 			"fuse"
+            "dialout"
+            "colord"
 		];
 		isNormalUser = true;
 		createHome = true;

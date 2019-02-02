@@ -11,7 +11,7 @@
         ./hardware-configuration.nix
 
 # neovim
-            ./nix_configs/neovim.nix
+            #./nix_configs/neovim.nix
 
 # window manger
             ./nix_configs/window_manager.nix
@@ -38,7 +38,7 @@
 #./nix_configs/communication.nix
 
 # development
-            ./nix_configs/development.nix
+            #./nix_configs/development.nix
 
 # fonts
             ./nix_configs/fonts.nix
@@ -102,7 +102,6 @@
         i2pd
         (import ./nix_configs/emacs.nix { inherit pkgs; })
         exfat
-        usbutils
     ];
 
 
