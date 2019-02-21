@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
@@ -9,9 +8,9 @@
 		#llvm
 		lld
 
-		gmp
-		idris
-        idrisPackages.contrib
-        idrisPackages.pruviloj
+        (idrisPackages.with-packages (with idrisPackages; [
+            contrib
+            pruviloj
+        ]))
 	];
 }
