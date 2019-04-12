@@ -14,6 +14,7 @@ in
     magit
     evil-magit
     idris-mode
+    ponylang-mode
   ]) ++ (with epkgs.elpaPackages; [
     org
   ]) ++ [

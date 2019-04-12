@@ -4,6 +4,7 @@
 	    darktable
 	    gimp
 	    displaycal
+	    geeqie
 	];
 	services.udev = {
 	    extraRules = ''

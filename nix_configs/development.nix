@@ -8,8 +8,20 @@
 		#llvm
 		lld
 
+		vscode
+		elmPackages.elm
+		nodejs
+
+        (appimage-run.override { extraPkgs = p: with p; [ 
+            libgpgerror
+        ]; })
+
+		ponyc
+		pony-stable
+
         (idrisPackages.with-packages (with idrisPackages; [
             contrib
+            effects
             pruviloj
         ]))
 	];
