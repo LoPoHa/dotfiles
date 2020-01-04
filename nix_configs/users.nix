@@ -12,7 +12,8 @@
 			"video"
 			"fuse"
             "dialout"
-            "colord"
+           	"colord"
+           	"adbusers"
 		];
 		isNormalUser = true;
 		createHome = true;

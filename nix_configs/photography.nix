@@ -2,7 +2,8 @@
 {
 	environment.systemPackages = with pkgs; [
 	    darktable
-	    gimp
+	    rawtherapee
+	    #gimp
 	    displaycal
 	    geeqie
 	];

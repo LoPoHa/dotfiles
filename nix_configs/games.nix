@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
 {
+    
 	environment.systemPackages = with pkgs; [
 		steam
-		steam-run
+		#winetricks
+		#(wine.override { wineBuild = "wineWow"; })
 	];
 }

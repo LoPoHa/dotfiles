@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
 	environment.systemPackages = with pkgs; [
-		texlive.combined.scheme-basic
+        texstudio
+		(texlive.combine {
+            inherit (texlive) scheme-full collection-langgerman algorithms cm-super;
+		})
 	];
 }

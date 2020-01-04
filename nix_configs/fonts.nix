@@ -12,12 +12,16 @@
 			source-code-pro
 			fira-code
 			source-han-sans-japanese
+			gohufont
+			#nerdfonts # find actual pkgs you use fonts from ...
+			opensans-ttf
+			siji
 		];
 		fontconfig = {
 			defaultFonts = {
-				monospace = [ "Source Code Pro" ];
-				sansSerif = [ "Source Code Pro" ];
-				serif     = [ "Source Code Pro" ];
+				monospace = [ "Fira Code" ];
+				sansSerif = [ "Fira Code" ];
+				serif     = [ "Fira Code" ];
 			};
 		};
 	};

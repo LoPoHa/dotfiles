@@ -4,9 +4,9 @@
 		imv
 		mpv
 		#smplayer
-		cmus
-		#zathura
-		okular
+		clementine
+		zathura
+		#okular
 		youtube-dl
 		#kdenlive
 		#scanner
@@ -15,5 +15,6 @@
 		skanlite
 	    tesseract
 	    imagemagick
+	    libreoffice
 	];
 }

@@ -10,6 +10,7 @@
 						{ name = "vim-hdevtools"; }
 						{ name = "neco-ghc"; }
 						{ name = "ale"; }
+						{ name = "rust-vim"; }
 					];
 				};
 				

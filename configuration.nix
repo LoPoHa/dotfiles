@@ -15,17 +15,17 @@
 # window manger
             ./nix_configs/window_manager.nix
 
-# shell
-            ./nix_configs/shell.nix
-
 # games
-            ./nix_configs/games.nix
+            #./nix_configs/games.nix
 
 # sudo
             ./nix_configs/sudo.nix
+			
+# shell
+			./nix_configs/shell.nix
 
 # latex
-#./nix_configs/latex.nix
+            ./nix_configs/latex.nix
 
 # users
             ./nix_configs/users.nix
@@ -33,20 +33,15 @@
 # media
             ./nix_configs/media.nix
 
-# communication
-#./nix_configs/communication.nix
+# music
+            ./nix_configs/music.nix
+
 
 # development
             ./nix_configs/development.nix
 
 # fonts
             ./nix_configs/fonts.nix
-
-# 3d printer
-#./nix_configs/3dprinter.nix
-
-# music
-            #./nix_configs/music.nix
 
 # photography
             ./nix_configs/photography.nix
@@ -65,15 +60,14 @@
 
 # Define your hostname.
     networking.hostName = "Noragami";
-# Enables wireless support via wpa_supplicant. 
-#networking.wireless.enable = true;
+    networking.wireless.enable = true;
     networking.firewall.enable = true;
     #networking.firewall.allowedTCPPortRanges = [ { from = 80; to = 80; } ];
 
 
 # Select internationalisation properties.
+    console.font = "inconsolata"";
     i18n = {
-        consoleFont = "inconsolata";
         defaultLocale = "en_US.UTF-8";
     };
 
@@ -89,6 +83,7 @@
         htop
         google-drive-ocamlfuse
         firefox
+        chromium
         ripgrep
         file
         alsaUtils
@@ -98,10 +93,17 @@
         gnupg
         kdeApplications.kgpg
         zlib
-        i2pd
         (import ./nix_configs/emacs.nix { inherit pkgs; })
         exfat
         usbutils
+        kitty
+        krita
+        inkscape
+        riot-desktop
+        discord
+        obs-studio
+        appimage-run
+        gparted
     ];
 
 
@@ -119,7 +121,13 @@
 
     hardware = {
         opengl = {
+            driSupport = true;
             driSupport32Bit = true;
+            enable = true;
+            extraPackages = with pkgs; [
+                vaapiVdpau
+                libvdpau-va-gl
+            ];
         };
         pulseaudio = {
             enable = true;
@@ -138,11 +146,12 @@
         ibus.engines = with pkgs.ibus-engines; [ anthy ];
     };
 
-
+    programs.ssh.startAgent = true;
+    programs.adb.enable = true;
 
     services.dbus.enable = true;
-    services.upower.enable = true;
+    #services.upower.enable = true;
 
-    system.stateVersion = "unstable";
-    system.autoUpgrade.enable = true;
+    #system.stateVersion = "unstable";
+    #system.autoUpgrade.enable = true;
 }                        

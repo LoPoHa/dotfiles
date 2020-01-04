@@ -1,28 +1,44 @@
 { config, pkgs, ... }:
+let
+  all-hies = import (fetchTarball "https://github.com/infinisil/all-hies/tarball/master") {};
+in
 {
 	environment.systemPackages = with pkgs; [
 		# other
 		git
-		pijul
+		git-lfs
+		#pijul
 		#clang
 		#llvm
 		lld
+	    linuxPackages.perf
 
 		vscode
-		elmPackages.elm
-		nodejs
+		atom
+		nodejs-12_x
 
-        (appimage-run.override { extraPkgs = p: with p; [ 
-            libgpgerror
-        ]; })
+        python3
+        godot
 
-		ponyc
-		pony-stable
+        #(idrisPackages.with-packages (with idrisPackages; [
+            #contrib
+            #effects
+            #pruviloj
+        #]))
 
-        (idrisPackages.with-packages (with idrisPackages; [
-            contrib
-            effects
-            pruviloj
-        ]))
+        godot
+	    okteta
+
+	    nodePackages.node2nix
+
+	    #elmPackages.elm
+	    #go
+
+	    gitkraken
+
+	    android-studio
+	    jdk11
+
+	    #meshroom
 	];
 }
