@@ -13,11 +13,9 @@
 		export ZSH=${pkgs.oh-my-zsh}/share/oh-my-zsh/
 		
 		ZSH_THEME="agnoster"
-
 		# set nvim as standard editor
 		export EDITOR='nvim'
 		export VISUAL='nvim'
-
 		HISTFILE=~/.zhistory
 		HISTSIZE=SAVEHIST=15
 		setopt sharehistory
@@ -26,7 +24,7 @@
 		# export cargo path
 		export PATH="$PATH:$HOME/.cargo/bin"
 		export PATH="$PATH:$HOME/.own_programs"
-
+		export PATH="$PATH:$HOME/.npm-global/bin"
 		#disable caps lock
 		setxkbmap -option ctrl:nocaps
 		
@@ -35,4 +33,3 @@
 
 	programs.zsh.promptInit = "";
 }
-

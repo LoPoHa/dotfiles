@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 {
+    nixpkgs.config.retroarch = {
+        enableMGBA = true;
+    };
     
 	environment.systemPackages = with pkgs; [
 		steam
-		#winetricks
-		#(wine.override { wineBuild = "wineWow"; })
+		retroarch
+        wine-staging
+        lutris
 	];
 }

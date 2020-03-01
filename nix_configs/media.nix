@@ -13,7 +13,7 @@
 		#gscan2pdf
 		simple-scan
 		skanlite
-	    tesseract
+	    tesseract4
 	    imagemagick
 	    libreoffice
 	];

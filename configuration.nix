@@ -16,16 +16,16 @@
             ./nix_configs/window_manager.nix
 
 # games
-            #./nix_configs/games.nix
+            ./nix_configs/games.nix
 
 # sudo
             ./nix_configs/sudo.nix
 			
 # shell
-			./nix_configs/shell.nix
+	    ./nix_configs/shell.nix
 
 # latex
-            ./nix_configs/latex.nix
+            #./nix_configs/latex.nix
 
 # users
             ./nix_configs/users.nix
@@ -34,7 +34,7 @@
             ./nix_configs/media.nix
 
 # music
-            ./nix_configs/music.nix
+            #./nix_configs/music.nix
 
 
 # development
@@ -63,10 +63,18 @@
     networking.wireless.enable = true;
     networking.firewall.enable = true;
     #networking.firewall.allowedTCPPortRanges = [ { from = 80; to = 80; } ];
+    networking.nameservers = ["1.1.1.1" "9.9.9.9"];
 
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+  # Per-interface useDHCP will be mandatory in the future, so this generated config
+  # replicates the default behaviour.
+    #networking.useDHCP = true;
+    #networking.interfaces.enp4s0.useDHCP = true;
+
+    sound.enable = true;
 
 # Select internationalisation properties.
-    console.font = "inconsolata"";
+    console.font = "inconsolata";
     i18n = {
         defaultLocale = "en_US.UTF-8";
     };
@@ -93,17 +101,28 @@
         gnupg
         kdeApplications.kgpg
         zlib
-        (import ./nix_configs/emacs.nix { inherit pkgs; })
+        #(import ./nix_configs/emacs.nix { inherit pkgs; })
         exfat
         usbutils
         kitty
         krita
         inkscape
         riot-desktop
-        discord
+        #discord
         obs-studio
-        appimage-run
-        gparted
+        #appimage-run
+        gimp
+        vulkan-tools
+        gscan2pdf
+        scantailor
+        skanlite
+        xsane
+        unpaper
+        (wine.override { wineBuild = "wine64"; })
+        goxel
+        blender
+        zlib
+        discord
     ];
 
 
@@ -137,8 +156,11 @@
         # scanner
         sane = {
             enable = true;
+            extraBackends = [ pkgs.utsushi ];
         };
     };
+
+    services.udev.packages = [ pkgs.utsushi ];
 
 # japanese input
     i18n.inputMethod = {
@@ -150,8 +172,7 @@
     programs.adb.enable = true;
 
     services.dbus.enable = true;
-    #services.upower.enable = true;
 
-    #system.stateVersion = "unstable";
-    #system.autoUpgrade.enable = true;
+    system.stateVersion = "unstable";
+    system.autoUpgrade.enable = true;
 }                        

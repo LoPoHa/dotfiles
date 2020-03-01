@@ -7,6 +7,7 @@ in
 		# other
 		git
 		git-lfs
+	    gitkraken
 		#pijul
 		#clang
 		#llvm
@@ -18,27 +19,33 @@ in
 		nodejs-12_x
 
         python3
-        godot
+        #godot
 
-        #(idrisPackages.with-packages (with idrisPackages; [
-            #contrib
-            #effects
-            #pruviloj
-        #]))
+        (idrisPackages.with-packages (with idrisPackages; [
+            contrib
+            effects
+            pruviloj
+        ]))
 
-        godot
-	    okteta
+        #godot
+	    #okteta
 
 	    nodePackages.node2nix
 
 	    #elmPackages.elm
 	    #go
 
-	    gitkraken
-
 	    android-studio
 	    jdk11
 
-	    #meshroom
+	    #idea.idea-community
+
+	    rustc
+	    cargo
+
+	    bazel
+	    gcc
+
+	    unison-ucm
 	];
 }
