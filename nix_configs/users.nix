@@ -18,7 +18,7 @@
 		isNormalUser = true;
 		createHome = true;
 		home = "/home/lopoha";
-		shell = "/run/current-system/sw/bin/zsh";
+		shell = "/run/current-system/sw/bin/fish";
 		uid = 1000;
 	};
 }

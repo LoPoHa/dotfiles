@@ -6,8 +6,7 @@
 		#smplayer
 		clementine
 		zathura
-		#okular
-		youtube-dl
+		okular
 		#kdenlive
 		#scanner
 		#gscan2pdf

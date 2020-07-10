@@ -16,7 +16,7 @@
             ./nix_configs/window_manager.nix
 
 # games
-            ./nix_configs/games.nix
+#            ./nix_configs/games.nix
 
 # sudo
             ./nix_configs/sudo.nix
@@ -44,7 +44,7 @@
             ./nix_configs/fonts.nix
 
 # photography
-            ./nix_configs/photography.nix
+            #./nix_configs/photography.nix
             ];
 
     nixpkgs.config.allowUnfree = true;
@@ -87,10 +87,8 @@
     environment.systemPackages = with pkgs; [
         zip
         unzip
-        keepassx2
         htop
-        google-drive-ocamlfuse
-        firefox
+        firefox-wayland
         chromium
         ripgrep
         file
@@ -102,27 +100,19 @@
         kdeApplications.kgpg
         zlib
         #(import ./nix_configs/emacs.nix { inherit pkgs; })
-        exfat
         usbutils
         kitty
-        krita
-        inkscape
-        riot-desktop
+	alacritty
         #discord
-        obs-studio
         #appimage-run
         gimp
         vulkan-tools
-        gscan2pdf
-        scantailor
-        skanlite
+        #gscan2pdf
+        #scantailor
+        #skanlite
         xsane
         unpaper
-        (wine.override { wineBuild = "wine64"; })
-        goxel
-        blender
         zlib
-        discord
     ];
 
 
